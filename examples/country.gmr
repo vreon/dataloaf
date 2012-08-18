@@ -1,0 +1,102 @@
+<song>
+    5 <verse> /// <song>
+    1 <verse>
+<verse>
+    5 <scenario lyric> / <continuation lyric> / <delayed consequence lyric> / <delayed consequence lyric>
+    2 <when scenario lyric> / <immediate consequence lyric> / <delayed consequence lyric> / <delayed consequence lyric>
+    1 <scenario lyric> / <continuation lyric>
+<scenario lyric>
+    1 <Well? Someone> <possibly verbed some stuff>
+    1 <Well? Someone> <was about to> <verb> <some stuff>
+<was about to>
+    2 thought <someone>'d
+    1 were gonna
+<when scenario lyric>
+    1 When <someone> <verbed> <some stuff>
+<Well? Someone>
+    1 W<ee>ll, <someone>
+    1 <Someone>
+<ee>
+    3 <ee>ee
+    1 ee
+<Someone>
+    2 I
+    2 You
+    1 Y'all
+    1 We
+<someone>
+    2 I
+    2 you
+    1 y'all
+    1 we
+<possibly verbed some stuff>
+    3 <verbed> <some stuff>
+    3 done <verbed> <some stuff>
+    1 ain't never <verbed> <some stuff>
+    1 ain't never <verbed> no <adjective> <object>
+<possibly verbed>
+    2 <verbed>
+    2 done <verbed>
+    1 ain't never <verbed>
+<verbed>
+    2 seen
+    3 took
+    3 broke
+    2 left
+    1 slept with
+    1 plowed
+<verb>
+    2 see
+    3 take
+    3 break
+    2 leave
+    1 sleep with
+    1 plow
+<some stuff>
+    2 <someone's> <object>
+    1 <someone's> <adjective> <object>
+<someone's>
+    1 my
+    1 your
+<object>
+    1 heart
+    1 tractor
+    3 truck
+    3 girlfriend
+    1 cattle
+    1 sheep
+    2 shotgun
+    2 beer
+    1 dog
+    1 baby
+<adjective>
+    2 drunken
+    2 no-good
+    2 low-down
+    2 dirty
+    1 darned
+    1 gol'darned
+<continuation lyric>
+    1 <delayed consequence lyric>
+    1 And <possibly verbed> <some stuff>
+<immediate consequence lyric>
+    2 <Someone> <verbed> <some stuff>
+    1 <Someone> went <to a place>
+<delayed consequence lyric>
+    1 <And/but/so> <someone> <possibly verbed some stuff>
+    1 <And/but/so> <someone> went <to a place>
+<to a place>
+    1 on out to the pasture
+    2 on out to the field
+    3 on out to <someone's> ranch
+    1 on out to the rodeo
+    1 to the general store
+    2 to the bar
+    1 to the honkytonk
+    1 to the hoedown
+    2 to the barn
+    1 fishin'
+<And/but/so>
+    1 And
+    1 But
+    1 So

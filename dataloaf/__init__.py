@@ -1,5 +1,6 @@
 """
-Parse and traverse a Data Loaf grammar.
+Data Loaf is a tool that spews out randomly-generated, structured data based on
+a set of rules defined in a grammar file.
 """
 from __future__ import print_function
 import argparse
@@ -21,6 +22,8 @@ def random_weighted(list_):
     return item
 
 
+# TODO: Need another API for populating rules. There could be cases where you
+# want to build a ruleset in code rather than from a string
 class Grammar(object):
     def __init__(self, string):
         self.parse(string)

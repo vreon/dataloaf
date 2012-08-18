@@ -8,7 +8,9 @@ import os
 app = Flask(__name__)
 
 # Endpoints are loaded at app start
-GMR_ROOT = os.path.join(os.path.dirname(__file__), 'gmr')
+GMR_ROOT = os.path.join(
+    os.path.dirname(__file__), os.getenv('DATALOAF_GRAMMAR_DIR')
+)
 GRAMMARS = [fn[:-4] for fn in os.listdir(GMR_ROOT) if fn.endswith('.gmr')]
 
 
