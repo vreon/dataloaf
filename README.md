@@ -1,9 +1,12 @@
 # Data Loaf
 
 Data Loaf is a tool that spews out randomly-generated, structured data based on
-a set of rules defined in a grammar file. The package contains an executable
-module for CLI usage, a Flask app with a HATEOAS API, and (someday) a fancy
-frontend for users to define and save their own grammars.
+a set of rules defined in a grammar file. It's what powers
+<http://dataloaf.42nex.us>.
+
+The package contains an executable module for CLI usage, a Flask app with a
+HATEOAS API, and (someday) a fancy frontend for users to define and save their
+own grammars.
 
 The traversal algorithm is nothing fancy, just iterated string replacement. But
 it's fun!
