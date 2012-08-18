@@ -47,11 +47,14 @@ class Grammar(object):
                     int(match.group(1)), match.group(2)
                 ))
 
-    def walk(self, iterations=10000):
+    def walk(self, max_iterations=None):
         result = random_weighted(self.rules[self.start])
         something_matched = True
+        iterations = 0
 
-        while something_matched:
+        while something_matched and (
+            not max_iterations or iterations < max_iterations
+        ):
             something_matched = False
             for symbol in self.rules:
                 result, num_matches = re.subn(
@@ -68,12 +71,25 @@ class Grammar(object):
 
 def _cli(args):
     gmr = Grammar(sys.stdin.read())
-    for i in range(args.walks):
-        print(gmr.walk())
+    for i in range(args.num):
+        print(gmr.walk(max_iterations=args.abort))
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--walks', type=int, default=1)
+    parser.add_argument(
+        '--num', '-n',
+        metavar='N',
+        type=int,
+        default=1,
+        help='number of traversals to perform',
+    )
+    parser.add_argument(
+        '--abort', '-a',
+        metavar='N',
+        type=int,
+        default=0,
+        help='abort a traversal after N iterations',
+    )
 
     _cli(parser.parse_args())
