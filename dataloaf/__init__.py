@@ -70,29 +70,3 @@ class Grammar(object):
                     something_matched = True
 
         return result
-
-
-def _cli(args):
-    gmr = Grammar(sys.stdin.read())
-    for i in range(args.num):
-        print(gmr.walk(max_iterations=args.abort))
-
-
-if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        '--num', '-n',
-        metavar='N',
-        type=int,
-        default=1,
-        help='number of traversals to perform',
-    )
-    parser.add_argument(
-        '--abort', '-a',
-        metavar='N',
-        type=int,
-        default=0,
-        help='abort a traversal after N iterations',
-    )
-
-    _cli(parser.parse_args())
