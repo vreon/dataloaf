@@ -1,8 +1,13 @@
+"""
+Parse and traverse a Data Loaf grammar.
+"""
 from __future__ import print_function
 import argparse
 import random
 import re
 import sys
+
+__version__ = '0.1.0'
 
 
 # TODO: Make a WeightedMapping that caches sum
@@ -68,9 +73,7 @@ def _cli(args):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(
-        description='Parse and traverse a Data Loaf grammar.',
-    )
+    parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--walks', type=int, default=1)
 
     _cli(parser.parse_args())
