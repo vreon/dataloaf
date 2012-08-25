@@ -1,3 +1,7 @@
+# Ghiscari names
+# Builds names that sound like Ghiscari characters from George R. R. Martin's
+# "A Song of Ice and Fire" novels.
+
 (ghiscari-name)
     1 (name) (zo) (name)
 

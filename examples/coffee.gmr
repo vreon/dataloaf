@@ -1,3 +1,6 @@
+# Coffees
+# Generates preposterously complex Starbucks beverages.
+
 (start)
 	1 iced (decaf) (shots) (size) (syrup) (milk) (custom-gen) (drink)
 	1 (decaf) (shots) (size) (syrup) (milk) (custom-gen) (drink)
