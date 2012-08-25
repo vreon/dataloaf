@@ -41,6 +41,9 @@ class Grammar(object):
             if not len(line):
                 continue
 
+            if line.startswith('#'):
+                continue
+
             match = rule_re.match(line)
             if match is None:
                 self.start = self.start or line
