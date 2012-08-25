@@ -1,0 +1,49 @@
+(ghiscari-name)
+    1 (name) (zo) (name)
+
+(name)
+    1 (Start)(end)
+
+(Start)
+    1 Gr
+    1 Kr
+    1 Pr
+    1 Ozn
+    1 Gh
+    1 H
+    1 N
+
+(end)
+    1 (vowel)(end2)
+    2 (vowel)(end1)(vowel)(end2)
+
+(vowel)
+    2 e
+    2 a
+    2 ah
+    2 i
+    1 y
+    1 o
+
+(end1)
+    1 d
+    1 l
+    1 s
+    1 z
+    1 n
+    1 zn
+    1 nd
+
+(end2)
+    1 d
+    1 k
+    1 l
+    1 s
+    1 r
+    1 z
+    1 n
+
+(zo)
+    3 zo
+    3 mo
+    1 na
