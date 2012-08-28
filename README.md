@@ -1,53 +1,63 @@
 # Data Loaf
 
-Data Loaf is a tool that spews out randomly-generated, structured data based on
-a set of rules defined in a grammar file. It's what powers
+Data Loaf is a module that helps you generate dummy data using declaratively
+constructed object templates (or Loaves). You can also think of it as a system
+for randomly walking context-free grammars. It's what powers
 <http://dataloaf.42nex.us>.
 
-The package contains an executable module for CLI usage, a Flask app with a
-HATEOAS API, and (someday) a fancy frontend for users to define and save their
-own grammars.
+A Loaf is basically just a class that implements `bake()`. Data Loaf comes with
+several of them that wrap native types, but it's trivial to add your own.
 
-The traversal algorithm is nothing fancy, just iterated string replacement. But
-it's fun!
+## Usage
 
-## Example of the fun
-
-Let's start with a grammar file:
-
-```
-<start>
-    1 Data Loaf is <an-adjective> piece of <noun>!
-
-<an-adjective>
-    4 an excellent
-    4 an enormous
-    1 a gigantic
-    
-<noun>
-    2 software
-    2 crap
-    1 turkey
+```python
+>>> d8 = dataloaf.int(1, 8)
+>>> d8.bake()
+5
 ```
 
-Note that there's nothing special about those angle brackets. You could go on
-to define rules for the string `turkey` if you wanted. (Even the letter `e` if
-you're feeling adventurous.)
+Nothing `random.randint` can't do, right? But check this out:
 
-That integer next to each rule is its weight. Like drawing marbles from a bag,
-Data Loaf sums up the probabilities for a ruleset and picks one.
-
-Let's run three traversals of that file:
-
-```bash
-$ python -m dataloaf --num 3 < example.gmr
-Data Loaf is an excellent piece of software!
-Data Loaf is an enormous piece of crap!
-Data Loaf is an enormous piece of turkey!
+```python
+>>> name = dataloaf.join('', [
+...     dataloaf.choice(['Gr', 'Kl', 'Ur']),
+...     dataloaf.choice(['oz', 'ug', 'un']),
+... ])
+>>> hit_points = dataloaf.transform(d8, lambda x: x + 1)
+>>> item = dataloaf.weighted([
+...     (10, 'gold coin'),
+...     (2, 'amulet'),
+...     (1, 'mystical tome'),
+... ])
+>>> inventory = dataloaf.repeat(item, dataloaf.int(0, 3))
+>>> orc = dataloaf.dict(name=name, hit_points=hit_points, inventory=inventory)
+>>> orcs = dataloaf.repeat(orc, 3)
+>>> orcs.bake()
+[
+  {
+    'hit_points': 8,
+    'inventory': ['amulet', 'gold coin', 'gold coin'],
+    'name': 'Klun'
+  },
+  {
+    'hit_points': 3,
+    'inventory': ['gold coin', 'gold coin'],
+    'name': 'Uroz'
+  }, 
+  {
+    'hit_points': 2,
+    'inventory': ['mystical tome', 'gold coin'],
+    'name': 'Klug'
+  }
+]
 ```
 
-Useful, no? Now it's your turn -- check out the examples and let your
-imagination take you from there! **♪ Data Looooooaf! ♫**
+When a Loaf is baked, the bake call propagates down the structure; objects that
+don't respond to bake() are returned as-is. Note that you can also call bake on
+any of these intermediate loaves (e.g. `hit_points.bake()`), which can be handy
+for debugging.
+
+See the included examples or the documentation for further information.
 
 ## License
 

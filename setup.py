@@ -10,9 +10,6 @@ setup(
     license='MIT',
     keywords='grammar generator random',
     packages=find_packages(),
-    extras_require={
-        'flask_app': ['flask']
-    },
     classifiers=[
         'Topic :: Text Processing',
         'Development Status :: 3 - Alpha',
