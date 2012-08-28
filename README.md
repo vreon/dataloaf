@@ -52,10 +52,10 @@ Nothing `random.randint` can't do, right? But check this out:
 ]
 ```
 
-When a Loaf is baked, the bake call propagates down the structure; objects that
-don't respond to bake() are returned as-is. Note that you can also call bake on
-any of these intermediate loaves (e.g. `hit_points.bake()`), which can be handy
-for debugging.
+When a Loaf is baked, the `bake()` call propagates down the structure; objects
+that don't respond to `bake()` are returned as-is. Note that you can also call
+`bake()` on any of these intermediate loaves (e.g. `hit_points.bake()`), which
+can be handy for debugging.
 
 See the included examples or the documentation for further information.
 
